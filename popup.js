@@ -1,9 +1,15 @@
 chrome.tabs.query({},function(tabs){
   let $textarea = $('<textarea></textarea>');
-  $textarea.text('[' + tabs[0].title + ' ' + tabs[0].url + ']');
+  let copy_text = '';
+  for (let i = 0; i < tabs.length; i++) {
+    if (tabs[i].highlighted === true) {
+      copy_text += '[' + tabs[i].title + ' ' + tabs[i].url + ']\n';
+    }
+  }
+  $textarea.text(copy_text);
   $('#copied').append($textarea);
   $textarea.select();
   document.execCommand('copy');
   $textarea.remove();
-  $('#copied').text('[' + tabs[0].title + ' ' + tabs[0].url + ']'); 
+  $('#copied').text('copied!'); 
 });
