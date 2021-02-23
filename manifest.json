@@ -1,0 +1,13 @@
+{
+  "manifest_version":2,
+  "name":"Scrapbox Link Saver",
+  "version":"1.0",
+  "permissions":["tabs"],
+  "browser_action":{
+    "default_icon": {
+      "16": "icon16.png"
+    },
+    "default_title":"Scrapbox Link Saver",
+    "default_popup":"popup.html"
+  }
+}
